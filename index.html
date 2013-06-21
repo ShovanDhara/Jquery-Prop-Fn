@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hover Glow</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){  
+    var previous;
+
+    $("select").focus(function () {
+        // Store the current value on focus and on change
+        previous = this.value;
+    }).change(function() {
+        // Do something with the previous value after the change
+        
+        $("select").not(this).find("option[value="+ previous + "]").prop('disabled', false);
+        $("select").not(this).find("option[value="+ $(this).val() + "]").prop('disabled', true);
+        // Make sure the previous value is updated
+        previous = this.value;
+    });
+}); 
+</script>
+<style>
+
+</style>
+</head>
+
+<body>
+<select id="select1" name="indication_subject[]">
+  <option value="" selected="selected">a </option>
+  <option value="1"> Accounting</option>
+  <option value="2"> Afrikaans</option>
+  <option value="3"> Applied Information and Communication Technology</option>
+  <option value="4"> Arabic</option>
+  <option value="5"> Art and Design</option>
+  <option value="6"> Biology</option>
+  <option value="7"> Business Studies</option>
+</select>
+
+<select id="select2" name="indication_subject[]">
+  <option value="" selected="selected">a </option>
+  <option value="1"> Accounting</option>
+  <option value="2"> Afrikaans</option>
+  <option value="3"> Applied Information and Communication Technology</option>
+  <option value="4"> Arabic</option>
+  <option value="5"> Art and Design</option>
+  <option value="6"> Biology</option>
+  <option value="7"> Business Studies</option>
+</select>
+
+<select id="select3" name="indication_subject[]">
+  <option value="" selected="selected">a </option>
+  <option value="1"> Accounting</option>
+  <option value="2"> Afrikaans</option>
+  <option value="3"> Applied Information and Communication Technology</option>
+  <option value="4"> Arabic</option>
+  <option value="5"> Art and Design</option>
+  <option value="6"> Biology</option>
+  <option value="7"> Business Studies</option>
+</select>
+</body>
+</html>
